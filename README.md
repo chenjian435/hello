@@ -1,7 +1,6 @@
 <<<<<<< HEAD
 # hello
-你好啊
-=======
+你好啊,好个屁=======
 # hello_vue
 
 ## Project setup
