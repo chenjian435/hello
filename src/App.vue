@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app">
+   <SchoolVue/>
+   <StudentVue
+   :mingzi="name"
+   
+   />
+   <Welcome ref="hy"/>
+   <button @click="show">点我展示refs</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//引入组件
+import SchoolVue from './components/School'
+import StudentVue from './components/Student.vue'
+import Welcome from './components/Welcome'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+
+   name:'App',
+   components:{SchoolVue,StudentVue,Welcome},
+   data(){
+    return{
+      name:'zhangsan'
+    }
+   },
+   methods:{
+     show(){
+      console.log(this.$refs)
+     }
+   }
+   
 }
+
+
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+ .app{
+  background-color: aqua;
+  padding: 30px;
+ }  
+  
 </style>
